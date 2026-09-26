@@ -1,0 +1,36 @@
+{
+  "name": "@local/dsh-ponytail",
+  "version": "0.1.2",
+  "private": true,
+  "type": "module",
+  "description": "DSH integration for the upstream Ponytail skills and modes",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pascapone/dsh-ponytail.git"
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "scripts": {
+    "test": "node --test test.mjs prompt.integration.test.mjs"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-commands": "0.1.7-rc.2",
+    "@deepseek-ai/dsh-skill": "0.1.7-rc.2",
+    "@deepseek-ai/dsh-system-prompt": "0.1.7-rc.2"
+  },
+  "dependencies": {
+    "@dietrichgebert/ponytail": "4.10.0"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": ["index.js", "cordis.patch.yml", "locale/*.json", "README.md"],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
