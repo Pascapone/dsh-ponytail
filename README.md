@@ -16,3 +16,5 @@ An existing project `AGENTS.md` or another Ponytail adapter may add duplicate ru
 ## Check
 
 Run `npm test` with a Node runtime. The integration test uses a sibling DSH checkout (or `DSH_HARNESS_ROOT`) to prove that the actual DSH prompt assembler retains its original sections byte-for-byte and appends Ponytail last. Set `DSH_HARNESS_ROOT` to a `0.1.7-rc.2` checkout when validating this release. A successful Plugin Manager installation and an actual agent request are still required for live verification.
+
+The bundle chooses `globRootIgnorePolicy: respect` for the native `tool-fs-search` row, so broad workspace discovery honors ignore files while specific patterns/subtrees still include ignored files. This requires the corresponding Core option. Override that row with `globRootIgnorePolicy: include` to restore native discovery. Bundle row replacement also states `sampleOverCapGlobResults: false`; other search limits use their native defaults. Removing the bundle removes its configuration contribution; unloading only the Ponytail prompt plugin does not change deployment configuration.

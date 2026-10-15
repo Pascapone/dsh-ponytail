@@ -2,3 +2,7 @@
     - id: dsh-ponytail
       name: '@pascapone/dsh-ponytail'
       config: {}
+- id: tool-fs-search
+  config:
+    sampleOverCapGlobResults: false
+    globRootIgnorePolicy: respect
